@@ -1,0 +1,75 @@
+import React from 'react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { CheckCircle2 } from 'lucide-react';
+
+export function AboutSection() {
+  return (
+    <section id="about" className="py-32 bg-slate-50 text-slate-900 overflow-hidden relative">
+      {/* Decorative Texture Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative animate-in slide-in-from-left-12 duration-1000">
+            <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition-opacity duration-500">
+              <Image
+                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop"
+                alt="Chauffeur Service"
+                width={800}
+                height={600}
+                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            {/* Experience Badge */}
+            <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl hidden md:block border border-primary/20">
+              <div className="text-5xl font-black text-white mb-1">+10</div>
+              <div className="text-sm font-bold text-primary-foreground/80 uppercase tracking-[0.2em]">Anos de<br/>Experiência</div>
+            </div>
+          </div>
+
+          <div className="space-y-10 animate-in slide-in-from-right-12 duration-1000">
+            <div className="space-y-6">
+              <h2 className="text-xs font-semibold tracking-[0.3em] text-primary uppercase">
+                Quem Somos
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-black tracking-tighter leading-[1.1] text-slate-900">
+                COMPROMETIDOS COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">EXCELÊNCIA</span>
+              </h3>
+              <p className="text-slate-600 text-lg leading-relaxed font-light">
+                A ZT Mobility nasceu da paixão por proporcionar experiências de luxo e extremo conforto no Nordeste brasileiro. Somos especialistas em traslados privados e passeios exclusivos, com foco inabalável em segurança, pontualidade e discrição.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start space-x-6">
+                <div className="bg-primary/10 p-2 rounded-full border border-primary/20 shrink-0">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-2 tracking-tight text-slate-900">Motoristas Certificados</h4>
+                  <p className="text-slate-600 font-light text-sm leading-relaxed">Nossa equipe é altamente profissional, bilíngue e possui vasta experiência nas rodovias e destinos do Nordeste.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-6">
+                <div className="bg-primary/10 p-2 rounded-full border border-primary/20 shrink-0">
+                  <CheckCircle2 className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-2 tracking-tight text-slate-900">Nossa Frota Premium</h4>
+                  <p className="text-slate-600 font-light text-sm leading-relaxed">Veículos de última geração, mantidos impecavelmente sob os mais rigorosos padrões de segurança automotiva.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8">
+              <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 h-14 rounded-full transition-all tracking-widest uppercase text-xs shadow-lg shadow-primary/20">
+                CONHEÇA NOSSA HISTÓRIA
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
