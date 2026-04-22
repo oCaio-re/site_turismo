@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Carousel,
   CarouselContent,
@@ -25,7 +26,7 @@ const tours = [
   {
     id: 2,
     title: "Tour Histórico Recife Antigo e Olinda",
-    image: "https://images.unsplash.com/photo-IM0G4ubdtHo?q=80&w=2072&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2072&auto=format&fit=crop",
     price: "A partir de R$ 280",
     duration: "6 Horas",
     group: "Até 6 pessoas",
@@ -35,7 +36,7 @@ const tours = [
   {
     id: 3,
     title: "Praia dos Carneiros & Passeio de Catamarã",
-    image: "https://images.unsplash.com/photo-QK-WCKczaOg?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop",
     price: "A partir de R$ 380",
     duration: "9 Horas",
     group: "Até 6 pessoas",
@@ -45,7 +46,7 @@ const tours = [
   {
     id: 4,
     title: "Piscinas Naturais de Maragogi-AL",
-    image: "https://images.unsplash.com/photo-rhV28yBkzcY?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop",
     price: "A partir de R$ 550",
     duration: "10 Horas",
     group: "Até 6 pessoas",
@@ -61,18 +62,20 @@ export function TourCarousel() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-4">
             <h2 className="text-xs font-semibold tracking-[0.3em] text-primary uppercase">
-              A a Z Tours
+              Nery Tour
             </h2>
             <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">
               PASSEIOS <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">PRIVADOS</span>
             </h3>
             <p className="text-slate-600 max-w-xl text-lg font-light">
-              Descubra a beleza e a cultura de Portugal com os nossos passeios personalizados em veículos de luxo.
+              Descubra as praias e a cultura de Pernambuco e arredores com os nossos passeios personalizados.
             </p>
           </div>
-          <Button variant="outline" className="hidden md:flex border-primary/20 text-primary hover:bg-primary hover:text-white transition-all font-bold px-8 h-12 rounded-full shadow-sm">
-            Ver Todos os Passeios
-          </Button>
+          <Link href="/passeios">
+            <Button variant="outline" className="hidden md:flex border-primary/20 text-primary hover:bg-primary hover:text-white transition-all font-bold px-8 h-12 rounded-full shadow-sm">
+              Ver Todos os Passeios
+            </Button>
+          </Link>
         </div>
 
         <Carousel

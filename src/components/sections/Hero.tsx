@@ -1,22 +1,62 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Shield, Clock, Award } from 'lucide-react';
 
+const heroImages = [
+  {
+    url: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=2070&auto=format&fit=crop",
+    alt: "Praia de Porto de Galinhas"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop",
+    alt: "Praias do Nordeste"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
+    alt: "Transporte Executive"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070&auto=format&fit=crop",
+    alt: "Destinos Incríveis"
+  }
+];
+
 export function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full opacity-60 overflow-hidden pointer-events-none">
-        <iframe 
-          src="https://www.youtube.com/embed/1u4j1nO46l8?autoplay=1&mute=1&controls=0&loop=1&playlist=1u4j1nO46l8&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          className="w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        ></iframe>
-      </div>
+      {/* Background Slideshow */}
+      {heroImages.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+        >
+          <Image
+            src={image.url}
+            alt={image.alt}
+            fill
+            className="object-cover"
+            priority={index === 0}
+          />
+        </div>
+      ))}
 
-      {/* Deep Gradient Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
+      {/* Subtle Gradient Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10" />
 
       <div className="container relative z-20 mx-auto px-4 md:px-6">
         <div className="max-w-3xl space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
@@ -25,21 +65,25 @@ export function Hero() {
               Serviço de Mobilidade Premium
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter uppercase">
-              Viva o <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">NORDESTE</span>
+              Viva o <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">NORDESTE</span>
             </h1>
             <p className="text-lg md:text-xl text-zinc-300 max-w-xl font-medium leading-relaxed">
-              Transporte privado de luxo em Recife, Porto de Galinhas, Olinda e Carneiros. Descubra a excelência com a ZT Mobility.
+              Transporte privado de luxo em Recife, Porto de Galinhas, Olinda e Carneiros. Descubra a excelência com a Nery Tour.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold h-14 px-8 rounded-full group transition-all duration-300 uppercase tracking-widest shadow-lg shadow-primary/20">
-              Transfers Privados
-              <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button size="xl" variant="outline" className="text-white border-white/30 bg-black/30 hover:bg-white hover:text-black backdrop-blur-md text-lg font-medium h-14 px-8 rounded-full transition-all duration-300">
-              Passeios e Tours
-            </Button>
+            <Link href="/traslados">
+              <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold h-14 px-8 rounded-full group transition-all duration-300 uppercase tracking-widest shadow-lg shadow-primary/20 w-full sm:w-auto">
+                Transfers Privados
+                <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <Link href="/passeios">
+              <Button size="xl" variant="outline" className="text-white border-white/30 bg-black/30 hover:bg-white hover:text-black backdrop-blur-md text-lg font-medium h-14 px-8 rounded-full transition-all duration-300 w-full sm:w-auto">
+                Passeios e Tours
+              </Button>
+            </Link>
           </div>
 
           {/* Trust Badges */}

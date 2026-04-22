@@ -11,14 +11,14 @@ const services = [
   },
   {
     title: "Passeios Privados",
-    description: "Descubra novos lugares em tours totalmente preparados, com experiências gastronômicas incluídas. Viva cada viagem com a ZT MOBILITY, seu parceiro em momentos inesquecíveis pelo litoral e interior de Pernambuco.",
+    description: "Descubra novos lugares em tours totalmente preparados, com experiências exclusivas incluídas. Viva cada viagem com a Nery Tour, seu parceiro em momentos inesquecíveis pelo litoral e interior de Pernambuco.",
     image: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?q=80&w=2070&auto=format&fit=crop",
     linkText: "RESERVAR AGORA"
   },
   {
     title: "Serviços de Mobilidade",
-    description: "Oferecemos soluções de mobilidade para empresas e eventos esportivos, garantindo pontualidade para suas reuniões ou treinos. Precisa de transporte para equipes ou colaboradores em Recife? A ZT Mobility leva você.",
-    image: "https://images.unsplash.com/photo--J3tzK3FPxQ?q=80&w=2072&auto=format&fit=crop",
+    description: "Oferecemos soluções de mobilidade para exclusivas e corporativas, garantindo pontualidade para suas reuniões ou treinos. Precisa de transporte rápido em Recife? A Nery Tour leva você.",
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2072&auto=format&fit=crop",
     linkText: "RESERVAR AGORA"
   }
 ];

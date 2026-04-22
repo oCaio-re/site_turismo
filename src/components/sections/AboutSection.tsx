@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -36,8 +37,14 @@ export function AboutSection() {
               <h3 className="text-4xl md:text-5xl font-black tracking-tighter leading-[1.1] text-slate-900">
                 COMPROMETIDOS COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">EXCELÊNCIA</span>
               </h3>
-              <p className="text-slate-600 text-lg leading-relaxed font-light">
-                A ZT Mobility nasceu da paixão por proporcionar experiências de luxo e extremo conforto no Nordeste brasileiro. Somos especialistas em traslados privados e passeios exclusivos, com foco inabalável em segurança, pontualidade e discrição.
+              <p className="text-slate-600 text-base leading-relaxed font-light mb-4">
+                A Nery Tour nasceu em 2015 com o propósito de oferecer transporte seguro, confortável e confiável. Começando de forma simples, a empresa cresceu conquistando a confiança dos clientes por meio da pontualidade e qualidade no atendimento.
+              </p>
+              <p className="text-slate-600 text-base leading-relaxed font-light mb-4">
+                Em 2024, a empresa deu mais um passo importante em sua evolução ao adquirir um veículo elétrico, reforçando seu compromisso com a inovação e a sustentabilidade.
+              </p>
+              <p className="text-slate-600 text-base leading-relaxed font-light font-medium italic">
+                Hoje, a Nery Tour se destaca por oferecer soluções de transporte para diferentes necessidades, sempre priorizando a segurança e a satisfação de cada passageiro.
               </p>
             </div>
 
@@ -56,16 +63,18 @@ export function AboutSection() {
                   <CheckCircle2 className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-2 tracking-tight text-slate-900">Nossa Frota Premium</h4>
-                  <p className="text-slate-600 font-light text-sm leading-relaxed">Veículos de última geração, mantidos impecavelmente sob os mais rigorosos padrões de segurança automotiva.</p>
+                  <h4 className="font-bold text-xl mb-2 tracking-tight text-slate-900">Inovação e Sustentabilidade</h4>
+                  <p className="text-slate-600 font-light text-sm leading-relaxed">Em 2024 iniciamos nossa frota elétrica reforçando nosso compromisso sustentável e mantendo a pontualidade e qualidade.</p>
                 </div>
               </div>
             </div>
 
             <div className="pt-8">
-              <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 h-14 rounded-full transition-all tracking-widest uppercase text-xs shadow-lg shadow-primary/20">
-                CONHEÇA NOSSA HISTÓRIA
-              </Button>
+              <Link href="/sobre">
+                <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-10 h-14 rounded-full transition-all tracking-widest uppercase text-xs shadow-lg shadow-primary/20">
+                  CONHEÇA NOSSA HISTÓRIA
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

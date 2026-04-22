@@ -12,10 +12,10 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 const navLinks = [
-  { name: 'Traslados', href: '#transfers' },
-  { name: 'Passeios', href: '#tours' },
-  { name: 'Nossa Frota', href: '#fleet' },
-  { name: 'Sobre Nós', href: '#about' },
+  { name: 'Traslados', href: '/traslados' },
+  { name: 'Passeios', href: '/passeios' },
+  { name: 'Mobilidade', href: '/mobilidade' },
+  { name: 'Sobre Nós', href: '/sobre' },
   { name: 'Contato', href: '#contact' },
 ];
 
@@ -48,10 +48,10 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="w-10 h-10 bg-primary/20 border border-primary/50 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
-            <span className="text-primary font-black text-xl italic">ZT</span>
+            <span className="text-primary font-black text-xl italic">NT</span>
           </div>
-          <span className="text-xl font-bold tracking-[0.2em] text-white">
-            MOBILITY
+          <span className="text-xl font-bold tracking-[0.2em] text-white uppercase">
+            Nery Tour
           </span>
         </Link>
 
