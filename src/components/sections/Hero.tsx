@@ -6,6 +6,28 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight, Shield, Clock, Award } from 'lucide-react';
 
 export function Hero() {
+  const slogans = [
+    {
+      badge: "Serviço de Mobilidade Premium",
+      title: <>Viva o <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">NORDESTE</span></>,
+      description: "Transporte privado de luxo em Recife, Porto de Galinhas, Olinda e Carneiros. Descubra a excelência com a Nery Tour."
+    },
+    {
+      badge: "Logística Corporativa Elite",
+      title: <>Transfers <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">EXECUTIVOS</span></>,
+      description: "Logística premium para empresas e eventos. Pontualidade, segurança e discrição em cada trajeto executivo."
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slogans.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       {/* Background Video */}
@@ -15,7 +37,7 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-80"
         >
           <source src="/video-hero-neryTour2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -23,21 +45,32 @@ export function Hero() {
       </div>
 
       {/* Subtle Gradient Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-70" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10" />
 
       <div className="container relative z-20 mx-auto px-4 md:px-6">
-        <div className="max-w-3xl space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
-          <div className="space-y-6">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-xs font-semibold tracking-[0.2em] text-primary uppercase backdrop-blur-sm">
-              Serviço de Mobilidade Premium
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter uppercase">
-              Viva o <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">NORDESTE</span>
-            </h1>
-            <p className="text-lg md:text-xl text-zinc-300 max-w-xl font-medium leading-relaxed">
-              Transporte privado de luxo em Recife, Porto de Galinhas, Olinda e Carneiros. Descubra a excelência com a Nery Tour.
-            </p>
+        <div className="max-w-3xl space-y-10">
+          <div className="relative h-[300px] md:h-[400px]">
+            {slogans.map((slogan, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 space-y-6 transition-all duration-1000 ease-in-out ${
+                  index === currentIndex
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10 pointer-events-none"
+                }`}
+              >
+                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-xs font-semibold tracking-[0.2em] text-primary uppercase backdrop-blur-sm">
+                  {slogan.badge}
+                </div>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter uppercase">
+                  {slogan.title}
+                </h1>
+                <p className="text-lg md:text-xl text-zinc-300 max-w-xl font-medium leading-relaxed">
+                  {slogan.description}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">

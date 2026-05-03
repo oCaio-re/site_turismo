@@ -42,8 +42,8 @@ export default function SobrePage() {
             <div className="relative">
               <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 group">
                 <Image
-                  src="/sobre-historia.png"
-                  alt="Nery Tour — Uma Década de Compromisso"
+                  src="/sobre-historia-fleet-vformation.png"
+                  alt="Nery Tour — Nossa Frota Premium"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"

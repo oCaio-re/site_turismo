@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Send, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
+import Image from "next/image";
 
 export default function ContatoPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -43,9 +44,16 @@ export default function ContatoPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[40vh] min-h-[300px] w-full mt-20 flex items-center justify-center bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0,transparent_100%)]" />
+      <div className="relative h-[50vh] min-h-[350px] w-full mt-20 flex items-center justify-center bg-slate-900 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/contato-hero.png" 
+            alt="Atendimento Nery Tour" 
+            fill 
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-12">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">

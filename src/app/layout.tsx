@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ZT Mobility - Traslados e Passeios em Recife e Pernambuco",
+  title: "Nery Tour - Traslados e Passeios",
   description: "Transporte privado de luxo, traslados e tours exclusivos em Recife, Porto de Galinhas, Olinda e litoral pernambucano.",
 };
 

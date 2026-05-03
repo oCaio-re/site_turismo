@@ -31,8 +31,27 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
+      {/* Overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden animate-in fade-in duration-300"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       <nav
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
@@ -98,25 +117,24 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-zinc-950 border-b border-white/10 animate-in slide-in-from-top duration-300">
-          <div className="container mx-auto px-4 py-6 space-y-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl animate-in slide-in-from-top-4 fade-in duration-300">
+          <div className="container mx-auto px-4 py-6 flex flex-col space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="block text-lg font-medium py-3 border-b border-white/5 text-zinc-300 hover:text-white last:border-0"
+                className="block text-lg font-semibold py-4 px-4 rounded-xl text-zinc-300 hover:text-primary hover:bg-primary/10 transition-all uppercase tracking-wide"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="flex flex-col space-y-4 pt-6">
-              <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer">
-                <Button className="w-full bg-white text-black hover:bg-zinc-200 h-12 text-base">Reserve Agora</Button>
+            <div className="pt-6 pb-2 px-2">
+              <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 text-lg font-bold uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 transition-all">
+                  Reserve Agora
+                </Button>
               </a>
-              <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 gap-2 h-12 text-base">
-                <Globe className="h-4 w-4" /> Idioma
-              </Button>
             </div>
           </div>
         </div>

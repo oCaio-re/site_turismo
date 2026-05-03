@@ -66,7 +66,7 @@ export default function TrasladosPage() {
               </div>
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="/transfer-executivo.png" 
+                  src="/transfer-executivo-van.png" 
                   alt="Experiência de Transfer Executivo VIP" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700"
