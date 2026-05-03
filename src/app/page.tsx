@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { TourCarousel } from "@/components/sections/TourCarousel";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { DestinationsGrid } from "@/components/sections/DestinationsGrid";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { Footer } from "@/components/layout/Footer";
 
@@ -11,8 +10,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <ServicesGrid />
-        <TourCarousel />
+        <DestinationsGrid />
         <AboutSection />
       </main>
       <Footer />

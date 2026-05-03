@@ -15,17 +15,17 @@ export function AboutSection() {
           <div className="relative animate-in slide-in-from-left-12 duration-1000">
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition-opacity duration-500">
               <Image
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop"
+                src="/van-road-along-coastal-cliff.jpg"
                 alt="Chauffeur Service"
                 width={800}
                 height={600}
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-[40rem] object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
             {/* Experience Badge */}
-            <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl hidden md:block border border-primary/20">
+            <div className="z-100 absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl hidden md:block border border-primary/20">
               <div className="text-5xl font-black text-white mb-1">+10</div>
-              <div className="text-sm font-bold text-primary-foreground/80 uppercase tracking-[0.2em]">Anos de<br/>Experiência</div>
+              <div className="text-sm font-bold text-primary-foreground/80 uppercase tracking-[0.2em]">Anos de<br />Experiência</div>
             </div>
           </div>
 
@@ -34,7 +34,7 @@ export function AboutSection() {
               <h2 className="text-xs font-semibold tracking-[0.3em] text-primary uppercase">
                 Quem Somos
               </h2>
-              <h3 className="text-4xl md:text-5xl font-black tracking-tighter leading-[1.1] text-slate-900">
+              <h3 className="text-4xl z-100 md:text-5xl font-black tracking-tighter leading-[1.1] text-slate-900">
                 COMPROMETIDOS COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">EXCELÊNCIA</span>
               </h3>
               <p className="text-slate-600 text-base leading-relaxed font-light mb-4">

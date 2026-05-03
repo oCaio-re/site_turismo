@@ -81,11 +81,11 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-4 text-zinc-400">
                 <Phone className="h-5 w-5 text-zinc-100 shrink-0" />
-                <span className="font-light">+55 (81) 98765-4321</span>
+                <span className="font-light">+55 81 98876-3397</span>
               </li>
               <li className="flex items-center space-x-4 text-zinc-400">
                 <Mail className="h-5 w-5 text-zinc-100 shrink-0" />
-                <span className="font-light">info@nerytour.com.br</span>
+                <span className="font-light">mathesnerya99@gmail.com</span>
               </li>
             </ul>
           </div>

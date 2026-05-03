@@ -16,7 +16,7 @@ const navLinks = [
   { name: 'Passeios', href: '/passeios' },
   { name: 'Mobilidade', href: '/mobilidade' },
   { name: 'Sobre Nós', href: '/sobre' },
-  { name: 'Contato', href: '#contact' },
+  { name: 'Contato', href: '/contato' },
 ];
 
 export function Navbar() {
@@ -33,15 +33,11 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top Promotion Bar */}
-      <div className="hidden md:flex bg-primary text-primary-foreground text-xs font-semibold px-4 py-2 justify-center items-center tracking-wide">
-        Explore Pernambuco com 25% OFF em traslados e tours. Inscreva-se no Pop-Up e receba o código!
-      </div>
       <nav
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'top-0 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 py-4'
-            : 'top-9 bg-slate-950/40 backdrop-blur-sm py-8'
+            : 'top-0 bg-slate-950/40 backdrop-blur-sm py-4 md:py-8'
         }`}
       >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -79,10 +75,12 @@ export function Navbar() {
               <DropdownMenuItem className="focus:bg-zinc-900 focus:text-white">English</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button variant="outline" className="border-primary/20 text-primary bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all gap-2 rounded-full px-6 font-bold">
-            <Phone className="h-4 w-4" />
-            +55 (81) 98765-4321
-          </Button>
+          <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="border-primary/20 text-primary bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all gap-2 rounded-full px-6 font-bold">
+              <Phone className="h-4 w-4" />
+              +55 81 98876-3397
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -113,7 +111,9 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col space-y-4 pt-6">
-              <Button className="w-full bg-white text-black hover:bg-zinc-200 h-12 text-base">Reserve Agora</Button>
+              <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer">
+                <Button className="w-full bg-white text-black hover:bg-zinc-200 h-12 text-base">Reserve Agora</Button>
+              </a>
               <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 gap-2 h-12 text-base">
                 <Globe className="h-4 w-4" /> Idioma
               </Button>
