@@ -10,7 +10,7 @@ export default function SobrePage() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[50vh] min-h-[400px] w-full mt-20 flex items-center justify-center">
+      <div className="relative h-[50vh] min-h-[400px] w-full flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=2069&auto=format&fit=crop" 

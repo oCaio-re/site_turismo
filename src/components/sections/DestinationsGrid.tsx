@@ -64,7 +64,7 @@ export function DestinationsGrid() {
               Nery Tour
             </h2>
             <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase">
-              Traslados e <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Passeios</span>
+              Translados e <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Passeios</span>
             </h3>
             <p className="text-slate-600 max-w-xl text-lg font-light">
               Descubra as praias e a cultura de Pernambuco e arredores com os nossos trajetos e roteiros personalizados diretamente do Aeroporto.
@@ -95,13 +95,13 @@ export function DestinationsGrid() {
               </div>
 
               {/* Content */}
-              <div className="relative z-20 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="relative z-20 p-8 transform translate-y-0 md:translate-y-6 md:group-hover:translate-y-0 transition-transform duration-500">
                 <div className="flex items-center text-sm font-semibold text-emerald-400 mb-2 opacity-90">
                   <Clock className="h-4 w-4 mr-2" />
                   {dest.duration}
                 </div>
                 <h4 className="text-2xl font-bold text-white mb-4 leading-tight">{dest.title}</h4>
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   <a href={`https://wa.me/5581988763397?text=${encodeURIComponent(`Olá, gostaria de saber mais sobre o destino: ${dest.title}`)}`} target="_blank" rel="noopener noreferrer">
                     <Button 
                       variant="outline" 

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1200"
+   height="1200"
+   viewBox="0 0 1200 1200"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient8">
+      <stop
+         style="stop-color:#101419;stop-opacity:1;"
+         offset="0"
+         id="stop8" />
+      <stop
+         style="stop-color:#324353;stop-opacity:1;"
+         offset="1"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient8"
+       id="linearGradient9"
+       x1="321.16473"
+       y1="321.93118"
+       x2="50.589203"
+       y2="51.35569"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter19"
+       x="-0.042481689"
+       y="-0.32054626"
+       width="1.1026641"
+       height="1.7746535">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood18" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="3.000000"
+         id="feGaussianBlur18" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="3.000000"
+         dy="3.000000"
+         id="feOffset18" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite18" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite19" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter25"
+       x="-0.11876117"
+       y="-0.11875226"
+       width="1.2684497"
+       height="1.2684296">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood24" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="4.800000"
+         id="feGaussianBlur24" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="3.000000"
+         dy="3.000000"
+         id="feOffset24" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite24" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite25" />
+    </filter>
+  </defs>
+  <g
+     id="g1"
+     transform="matrix(3.6703818,0,0,3.6350959,0.15569879,2.124651)">
+    <rect
+       style="fill:url(#linearGradient9);fill-opacity:1"
+       id="rect8"
+       width="333.42874"
+       height="334.96179"
+       x="-2.2995086"
+       y="-3.0660114"
+       ry="0" />
+    <path
+       id="path1"
+       style="fill:#03d1de;fill-opacity:1;filter:url(#filter25)"
+       d="m 76.832623,115.40625 c -2.252255,-0.12534 -4.496508,-0.0845 -6.705078,0.12695 -6.94677,0.66506 -11.233331,1.88421 -17.505859,4.97657 -25.926564,12.78179 -34.915332,45.36229 -19.177735,69.51171 8.356143,12.82254 21.691432,20.841 36.832032,22.14649 24.816502,2.13978 47.408207,-15.42685 51.832097,-40.30274 0.74518,-4.18997 0.73547,-11.92894 -0.0195,-16.16015 -1.69744,-9.51152 -6.5365,-18.96161 -13.25196,-25.87891 -2.95099,-3.0397 -8.16677,-6.87091 -12.195345,-8.95703 -6.216587,-3.21916 -13.051857,-5.08688 -19.808622,-5.46289 z m -4.308594,3.20313 c 8.119878,-0.29878 16.340308,1.56591 23.707066,5.62695 9.109845,5.02196 16.955215,14.13041 20.490265,23.78906 4.9972,13.65361 3.32999,28.19641 -4.6582,40.63867 -6.32555,9.85255 -17.588105,17.41154 -29.265693,19.64063 -13.870201,2.64763 -27.349573,-1.02527 -38.320313,-10.44141 -15.417326,-13.23261 -19.963782,-35.28092 -11.068359,-53.67773 3.60128,-7.44789 9.024726,-13.62289 16.011719,-18.22657 6.963637,-4.5883 14.983637,-7.05086 23.103515,-7.3496 z m -14.708984,28.27734 -4.03125,0.0898 -4.029297,0.0879 -4.556641,16.64063 c -2.506208,9.152 -4.561206,16.7469 -4.566406,16.8789 v 0.002 0.002 0.002 0.002 h 0.002 c 0.08614,0.12776 2.055453,0.23242 4.455079,0.23242 h 4.46875 l 0.363281,-1.35938 c 0.200335,-0.748 1.285661,-4.7387 2.412109,-8.86718 1.126447,-4.12848 2.048828,-7.75542 2.048828,-8.06055 0,-1.39426 0.643474,-0.62757 2.001953,2.38281 0.8103,1.79561 2.76631,6.07386 4.345703,9.50586 l 2.871094,6.23828 3.951172,0.0859 3.949219,0.084 1.714844,-6.32421 c 2.170589,-8.01267 4.497314,-16.43281 4.701171,-17.00782 0.127308,-0.35907 -0.285471,-0.41307 -2.1875,-0.29101 -1.859662,0.11935 -2.755749,0.36948 -4.341796,1.21484 -2.59856,1.38501 -3.277221,2.244 -4.009766,5.06836 -0.314458,1.2124 -0.678734,2.10944 -0.832031,2.08203 l -0.002,-0.002 h -0.002 -0.002 -0.002 -0.002 v -0.002 c -0.0028,-0.002 -0.0071,-0.004 -0.0098,-0.006 l -0.002,-0.002 C 66.286274,165.31527 59.83691,151.57798 58.47298,148.41587 Z m 32.140625,0.0957 c -9.76533,-0.0455 -17.826863,-0.011 -17.914063,0.0762 -0.168547,0.16855 -3.236393,11.00802 -3.251953,11.49024 v 0.002 0.002 l 0.002,0.002 v 0.002 0.002 0.002 0.002 l 0.002,0.002 v 0.002 l 0.002,0.002 0.002,0.002 v 0.002 l 0.002,0.002 h 0.002 0.002 l 0.002,0.002 c 0.102937,0.0204 0.663907,-0.47311 1.335938,-1.1875 2.542285,-2.70252 3.362714,-2.94763 10.269531,-3.06836 5.71694,-0.0999 6.020045,-0.0764 5.859375,0.47852 -0.19105,0.6599 -2.140953,7.74464 -5.001953,18.16797 -1.05993,3.86159 -1.927734,7.21203 -1.927734,7.44726 0,0.34091 0.915954,0.41065 4.513671,0.33985 l 4.513672,-0.0898 3.486328,-12.77539 c 1.917528,-7.02642 3.486343,-12.96218 3.486343,-13.1914 0,-0.32157 1.18444,-0.43611 5.183635,-0.50391 l 5.1836,-0.0879 1.00195,-3.52149 1,-3.51953 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.0192px;font-family:'Leelawadee UI';-inkscape-font-specification:'Leelawadee UI Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.58161;filter:url(#filter19)"
+       x="130.39336"
+       y="173.07521"
+       id="text1"><tspan
+         id="tspan1"
+         x="130.39336"
+         y="173.07521"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.0192px;font-family:'Leelawadee UI';-inkscape-font-specification:'Leelawadee UI Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.58161">NERY TOUR</tspan></text>
+  </g>
+</svg>

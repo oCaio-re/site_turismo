@@ -44,7 +44,7 @@ export default function ContatoPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[50vh] min-h-[350px] w-full mt-20 flex items-center justify-center bg-slate-900 overflow-hidden">
+      <div className="relative h-[50vh] min-h-[350px] w-full flex items-center justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/contato-hero.png" 
@@ -85,15 +85,6 @@ export default function ContatoPage() {
               </div>
 
               <div className="space-y-8">
-                <div className="flex items-start gap-6 group">
-                  <div className="bg-white p-4 rounded-2xl shadow-md border border-slate-100 group-hover:bg-emerald-50 transition-colors">
-                    <MapPin className="h-6 w-6 text-emerald-500" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Endereço</h4>
-                    <p className="text-slate-600 font-light">Av. Boa Viagem, 123<br/>51020-000 Recife, Pernambuco, Brasil</p>
-                  </div>
-                </div>
 
                 <div className="flex items-start gap-6 group">
                   <div className="bg-white p-4 rounded-2xl shadow-md border border-slate-100 group-hover:bg-emerald-50 transition-colors">

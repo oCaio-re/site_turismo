@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 
 const services = [
   {
-    title: "Traslados Privados",
-    description: "Oferecemos serviços de qualidade, levando você de ou para o Aeroporto Internacional do Recife (REC) com total segurança. Garantimos um excelente começo para suas aventuras em Pernambuco! Reserve seu traslado de forma rápida e simples.",
+    title: "Translados Privados",
+    description: "Oferecemos serviços de qualidade, levando você de ou para o Aeroporto Internacional do Recife (REC) com total segurança. Garantimos um excelente começo para suas aventuras em Pernambuco! Reserve seu translado de forma rápida e simples.",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop",
     linkText: "RESERVAR AGORA"
   },

@@ -53,7 +53,7 @@ export default function PasseiosPage() {
       <Navbar />
       
       {/* Hero Section para Passeios */}
-      <div className="relative h-[50vh] min-h-[400px] w-full mt-20 flex items-center justify-center">
+      <div className="relative h-[50vh] min-h-[400px] w-full flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/praia-dos-carneiros.jpg" 

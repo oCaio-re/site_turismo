@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nery Tour - Traslados e Passeios",
-  description: "Transporte privado de luxo, traslados e tours exclusivos em Recife, Porto de Galinhas, Olinda e litoral pernambucano.",
+  title: "Nery Tour - Translados e Passeios",
+  description: "Transporte privado de luxo, translados e tours exclusivos em Recife, Porto de Galinhas, Olinda e litoral pernambucano.",
+  icons: {
+    icon: "/logo_circle.svg",
+  },
 };
 
 export default function RootLayout({

@@ -74,7 +74,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Link href="/traslados">
+            <Link href="/translados">
               <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold h-14 px-8 rounded-full group transition-all duration-300 uppercase tracking-widest shadow-lg shadow-primary/20 w-full sm:w-auto">
                 Transfers Privados
                 <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
