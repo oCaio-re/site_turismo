@@ -4,19 +4,19 @@ import { Resend } from 'resend';
 export async function POST(request: Request) {
   try {
     const resendApiKey = process.env.RESEND_API_KEY;
-
-    if (!resendApiKey) {
-      console.error('RESEND_API_KEY is not defined in environment variables');
-      return NextResponse.json({ error: 'Configuração de e-mail ausente.' }, { status: 500 });
-    }
-
-    const resend = new Resend(resendApiKey);
     const body = await request.json();
     const { name, email, phone, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Nome, E-mail e Mensagem são obrigatórios.' }, { status: 400 });
     }
+
+    if (!resendApiKey) {
+      console.error('RESEND_API_KEY is not defined in environment variables');
+      return NextResponse.json({ error: 'Chave da API do Resend não configurada.' }, { status: 500 });
+    }
+
+    const resend = new Resend(resendApiKey);
 
     const data = await resend.emails.send({
       from: 'Contato Nery Tour <onboarding@resend.dev>',
