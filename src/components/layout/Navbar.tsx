@@ -42,7 +42,7 @@ export function Navbar() {
       {/* Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden animate-in fade-in duration-300"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-in fade-in duration-300"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
@@ -50,10 +50,10 @@ export function Navbar() {
       <nav
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? 'top-0 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 py-4'
-          : 'top-0 bg-slate-950/40 backdrop-blur-sm py-4 md:py-8'
+          : 'top-0 bg-slate-950/40 backdrop-blur-sm py-4 lg:py-8'
           }`}
       >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <Image src="/logo_circle.svg" alt="Nery Tour" width={50} height={50} />
@@ -63,7 +63,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -76,7 +76,7 @@ export function Navbar() {
           </div>
 
           {/* Header Actions */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6">
             <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-primary/20 text-primary bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all gap-2 rounded-full px-6 font-bold">
                 <Phone className="h-4 w-4" />
@@ -86,7 +86,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-4">
             <Button
               variant="ghost"
               size="icon"
@@ -100,7 +100,7 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl animate-in slide-in-from-top-4 fade-in duration-300">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl animate-in slide-in-from-top-4 fade-in duration-300">
             <div className="container mx-auto px-4 py-6 flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
