@@ -114,4 +114,9 @@
   html {
     @apply font-sans;
   }
+  button, 
+  [role="button"],
+  a {
+    @apply cursor-pointer;
+  }
 }

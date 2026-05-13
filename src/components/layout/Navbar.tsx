@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { name: 'Translados', href: '/translados' },
@@ -15,6 +17,7 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -40,12 +43,17 @@ export function Navbar() {
   return (
     <>
       {/* Overlay */}
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-in fade-in duration-300"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden cursor-pointer"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
       <nav
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${isScrolled
@@ -57,22 +65,33 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <Image src="/logo_circle.svg" alt="Nery Tour" width={50} height={50} />
-            <span className="text-xl font-bold tracking-[0.2em] text-white uppercase">
+            <span className="text-xl font-bold tracking-[0.2em] text-white uppercase transition-colors group-hover:text-primary">
               Nery Tour
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm font-semibold tracking-wide text-zinc-300 transition-colors hover:text-primary uppercase"
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="hidden lg:flex items-center space-x-1 bg-white/5 px-2 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`relative px-5 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 ${isActive ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="active-nav-pill"
+                      className="absolute inset-0 bg-primary rounded-full"
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.name}</span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Header Actions */}
@@ -99,29 +118,42 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl animate-in slide-in-from-top-4 fade-in duration-300">
-            <div className="container mx-auto px-4 py-6 flex flex-col space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block text-lg font-semibold py-4 px-4 rounded-xl text-zinc-300 hover:text-primary hover:bg-primary/10 transition-all uppercase tracking-wide"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="pt-6 pb-2 px-2">
-                <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 text-lg font-bold uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 transition-all">
-                    Reserve Agora
-                  </Button>
-                </a>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl overflow-hidden"
+            >
+              <div className="container mx-auto px-4 py-6 flex flex-col space-y-2">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`block text-lg font-semibold py-4 px-4 rounded-xl transition-all uppercase tracking-wide ${isActive
+                        ? 'text-primary bg-primary/10 border-l-4 border-primary'
+                        : 'text-zinc-300 hover:text-primary hover:bg-primary/5'
+                        }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+                <div className="pt-6 pb-2 px-2">
+                  <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 text-lg font-bold uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 transition-all">
+                      Reserve Agora
+                    </Button>
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </>
   );

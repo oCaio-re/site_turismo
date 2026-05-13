@@ -27,7 +27,7 @@ export function Footer() {
               Desde 2015 o seu destino com conforto e confiança. Transporte seguro e confortável adaptado às suas necessidades.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/nerytour/" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 rounded-full border border-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.instagram.com/nery.tour/" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 rounded-full border border-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all">
                 <Camera className="h-4 w-4" />              </a>
               <a href="https://wa.me/5581988763397?text=Olá, gostaria de saber mais sobre os serviços da Nery Tour." target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 rounded-full border border-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all">
                 <MessageCircle className="h-4 w-4" />
