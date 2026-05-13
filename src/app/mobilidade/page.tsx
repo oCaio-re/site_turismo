@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Car, Building2, Shield, Clock, Star } from 'lucide-react';
 import Image from "next/image";
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export default function MobilidadePage() {
   const servicos = [
@@ -40,15 +41,21 @@ export default function MobilidadePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/30" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">
-            Alto Padrão
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-lg leading-tight">
-            Mobilidade <span className="text-emerald-400">Inteligente</span>
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-200 font-light leading-relaxed drop-shadow-md">
-            Excelência, discrição e conforto absoluto para seus deslocamentos corporativos e pessoais.
-          </p>
+          <FadeIn direction="down" delay={0.2}>
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">
+              Alto Padrão
+            </div>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.3}>
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-lg leading-tight">
+              Mobilidade <span className="text-emerald-400">Inteligente</span>
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.4}>
+            <p className="text-lg md:text-xl text-zinc-200 font-light leading-relaxed drop-shadow-md">
+              Excelência, discrição e conforto absoluto para seus deslocamentos corporativos e pessoais.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
@@ -56,7 +63,7 @@ export default function MobilidadePage() {
         <div className="container mx-auto px-4 md:px-6">
           
           {/* Services Section */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <FadeIn className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
               Nossas Soluções
             </h2>
@@ -64,11 +71,11 @@ export default function MobilidadePage() {
             <p className="text-slate-600 text-lg mt-4">
               Adaptamos nossos serviços para atender perfeitamente à sua necessidade, seja para uma viagem rápida ou um planejamento logístico complexo.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24">
             {servicos.map((item, i) => (
-              <div key={i} className="bg-white p-10 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col group text-center relative overflow-hidden">
+              <FadeIn key={i} delay={0.1 * i} className="bg-white p-10 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col group text-center relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-slate-100 group-hover:bg-emerald-400 transition-colors duration-500" />
                 <div className="mx-auto bg-slate-50 p-5 rounded-full mb-8 group-hover:bg-emerald-50 transition-colors duration-300">
                   <item.Icon className="h-10 w-10 text-slate-400 group-hover:text-emerald-500 transition-colors" />
@@ -77,12 +84,12 @@ export default function MobilidadePage() {
                 <p className="text-slate-600 leading-relaxed font-light mb-8 flex-grow">
                   {item.description}
                 </p>
-              </div>
+              </FadeIn>
             ))}
           </div>
 
           {/* Diferenciais Section */}
-          <div className="max-w-6xl mx-auto mb-24">
+          <FadeIn className="max-w-6xl mx-auto mb-24">
             <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-64 lg:h-auto min-h-[400px]">
@@ -134,10 +141,10 @@ export default function MobilidadePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* CTA Section */}
-          <div className="max-w-5xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative">
+          <FadeIn delay={0.2} className="max-w-5xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 z-0 opacity-10">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0,transparent_100%)]" />
             </div>
@@ -157,7 +164,7 @@ export default function MobilidadePage() {
                 </Button>
               </a>
             </div>
-          </div>
+          </FadeIn>
 
         </div>
       </main>

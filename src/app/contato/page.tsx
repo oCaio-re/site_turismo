@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/animations/FadeIn";
 import { MapPin, Phone, Mail, Send, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import Image from "next/image";
 
@@ -56,15 +57,21 @@ export default function ContatoPage() {
           <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-12">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">
-            Atendimento
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-4 drop-shadow-lg leading-tight">
-            Fale <span className="text-emerald-400">Conosco</span>
-          </h1>
-          <p className="text-lg text-zinc-300 font-light max-w-2xl mx-auto">
-            Estamos prontos para atender você e planejar sua próxima viagem com excelência.
-          </p>
+          <FadeIn direction="down" delay={0.2}>
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">
+              Atendimento
+            </div>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.3}>
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-4 drop-shadow-lg leading-tight">
+              Fale <span className="text-emerald-400">Conosco</span>
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.4}>
+            <p className="text-lg text-zinc-300 font-light max-w-2xl mx-auto">
+              Estamos prontos para atender você e planejar sua próxima viagem com excelência.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
@@ -73,7 +80,7 @@ export default function ContatoPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             
             {/* Contact Information */}
-            <div className="space-y-12">
+            <FadeIn direction="left" delay={0.1} className="space-y-12">
               <div>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase mb-6">
                   Nossos Contatos
@@ -85,7 +92,6 @@ export default function ContatoPage() {
               </div>
 
               <div className="space-y-8">
-
                 <div className="flex items-start gap-6 group">
                   <div className="bg-white p-4 rounded-2xl shadow-md border border-slate-100 group-hover:bg-emerald-50 transition-colors">
                     <Phone className="h-6 w-6 text-emerald-500" />
@@ -102,7 +108,7 @@ export default function ContatoPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">E-mail</h4>
-                    <p className="text-slate-600 font-light">mathesnerya99@gmail.com</p>
+                    <p className="text-slate-600 font-light">nerytour.empresa@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -121,10 +127,10 @@ export default function ContatoPage() {
                   </a>
                 </div>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Contact Form */}
-            <div className="bg-white p-10 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 relative">
+            <FadeIn direction="right" delay={0.2} className="bg-white p-10 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 relative">
               <h3 className="text-2xl font-black text-slate-900 tracking-tighter uppercase mb-8">
                 Envie uma Mensagem
               </h3>
@@ -212,7 +218,7 @@ export default function ContatoPage() {
                   )}
                 </Button>
               </form>
-            </div>
+            </FadeIn>
 
           </div>
         </div>

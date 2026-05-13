@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, Clock } from 'lucide-react';
 import Image from "next/image";
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export default function TransladosPage() {
 
@@ -24,12 +25,16 @@ export default function TransladosPage() {
           <div className="absolute inset-0 bg-slate-950/60 mix-blend-multiply" />
         </div>
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-4">
-            Transfers de Aeroporto
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-200 font-light max-w-2xl mx-auto">
-            Recepção exclusiva, pontualidade e conforto desde o momento do seu desembarque.
-          </p>
+          <FadeIn direction="up" delay={0.2}>
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-4">
+              Transfers de Aeroporto
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.3}>
+            <p className="text-lg md:text-xl text-zinc-200 font-light max-w-2xl mx-auto">
+              Recepção exclusiva, pontualidade e conforto desde o momento do seu desembarque.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
@@ -37,7 +42,7 @@ export default function TransladosPage() {
         <div className="container mx-auto px-4 md:px-6">
 
           {/* Executive Transfer Section */}
-          <div className="max-w-6xl mx-auto mb-20">
+          <FadeIn className="max-w-6xl mx-auto mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-200 text-xs font-bold tracking-widest text-slate-700 uppercase">
@@ -73,12 +78,12 @@ export default function TransladosPage() {
                 />
               </div>
             </div>
-          </div>
+          </FadeIn>
 
 
 
           {/* Frota Premium Section */}
-          <div className="mt-24 max-w-6xl mx-auto">
+          <FadeIn className="mt-24 max-w-6xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
               <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
                 Nossa Frota Premium
@@ -153,10 +158,10 @@ export default function TransladosPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Corporate Solutions Section */}
-          <div className="mt-32 max-w-7xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+          <FadeIn delay={0.2} className="mt-32 max-w-7xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-12 md:p-16 flex flex-col justify-center text-white">
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase w-fit mb-6">
@@ -200,7 +205,7 @@ export default function TransladosPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-transparent lg:w-1/3" />
               </div>
             </div>
-          </div>
+          </FadeIn>
 
         </div>
       </main>

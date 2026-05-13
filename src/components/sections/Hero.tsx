@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Shield, Clock, Award } from 'lucide-react';
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export function Hero() {
   const slogans = [
@@ -30,6 +32,8 @@ export function Hero() {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+
+
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -37,6 +41,7 @@ export function Hero() {
           loop
           muted
           playsInline
+          poster="/porto-de-galinhas.webp"
           className="w-full h-full object-cover opacity-80"
         >
           <source src="/video-hero-neryTour2.mp4" type="video/mp4" />
@@ -73,7 +78,7 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <FadeIn delay={0.2} className="flex flex-col sm:flex-row gap-4 pt-4">
             <Link href="/translados">
               <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold h-14 px-8 rounded-full group transition-all duration-300 uppercase tracking-widest shadow-lg shadow-primary/20 w-full sm:w-auto">
                 Transfers Privados
@@ -85,10 +90,10 @@ export function Hero() {
                 Passeios e Tours
               </Button>
             </Link>
-          </div>
+          </FadeIn>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 border-t border-white/10">
+          <FadeIn delay={0.4} className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 border-t border-white/10">
             <div className="flex items-center space-x-4 opacity-80 hover:opacity-100 transition-opacity">
               <Shield className="h-6 w-6 text-white" />
               <span className="text-sm font-medium tracking-wide text-zinc-300">Segurança Certificada</span>
@@ -101,7 +106,7 @@ export function Hero() {
               <Award className="h-6 w-6 text-white" />
               <span className="text-sm font-medium tracking-wide text-zinc-300">Nossa Frota de Luxo</span>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
 

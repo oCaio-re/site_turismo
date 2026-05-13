@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2 } from 'lucide-react';
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export function AboutSection() {
   return (
@@ -12,7 +13,7 @@ export function AboutSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative animate-in slide-in-from-left-12 duration-1000">
+          <FadeIn direction="left" className="relative animate-in slide-in-from-left-12 duration-1000">
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition-opacity duration-500">
               <Image
                 src="/van-road-along-coastal-cliff.jpg"
@@ -27,9 +28,9 @@ export function AboutSection() {
               <div className="text-5xl font-black text-white mb-1">+10</div>
               <div className="text-sm font-bold text-primary-foreground/80 uppercase tracking-[0.2em]">Anos de<br />Experiência</div>
             </div>
-          </div>
+          </FadeIn>
 
-          <div className="space-y-10 animate-in slide-in-from-right-12 duration-1000">
+          <FadeIn direction="right" delay={0.2} className="space-y-10 animate-in slide-in-from-right-12 duration-1000">
             <div className="space-y-6">
               <h2 className="text-xs font-semibold tracking-[0.3em] text-primary uppercase">
                 Quem Somos
@@ -76,7 +77,7 @@ export function AboutSection() {
                 </Button>
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Leaf } from 'lucide-react';
 import Image from "next/image";
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export default function SobrePage() {
   return (
@@ -22,15 +23,21 @@ export default function SobrePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/30" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">
-            Nossa Essência
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-lg leading-tight">
-            Conheça a <span className="text-emerald-400">Nery Tour</span>
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-200 font-light leading-relaxed drop-shadow-md">
-            Sua parceira de confiança em mobilidade e turismo no Nordeste. Tradição, conforto e inovação em cada quilômetro rodado.
-          </p>
+          <FadeIn direction="down" delay={0.2}>
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest text-emerald-400 uppercase backdrop-blur-md mb-6">
+              Nossa Essência
+            </div>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.3}>
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-lg leading-tight">
+              Conheça a <span className="text-emerald-400">Nery Tour</span>
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.4}>
+            <p className="text-lg md:text-xl text-zinc-200 font-light leading-relaxed drop-shadow-md">
+              Sua parceira de confiança em mobilidade e turismo no Nordeste. Tradição, conforto e inovação em cada quilômetro rodado.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
@@ -38,7 +45,7 @@ export default function SobrePage() {
         <div className="container mx-auto px-4 md:px-6">
           
           {/* Nossa História */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-32">
+          <FadeIn className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-32">
             <div className="relative">
               <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 group">
                 <Image
@@ -79,10 +86,10 @@ export default function SobrePage() {
                 </p>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Missão, Visão e Valores */}
-          <div className="max-w-6xl mx-auto mb-32">
+          <FadeIn className="max-w-6xl mx-auto mb-32">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
                 Nossos Pilares
@@ -121,10 +128,10 @@ export default function SobrePage() {
                 </p>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Sustentabilidade */}
-          <div className="max-w-6xl mx-auto mb-32 bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+          <FadeIn className="max-w-6xl mx-auto mb-32 bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <div className="p-12 md:p-16 text-white">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-xs font-bold tracking-widest text-emerald-400 uppercase w-fit mb-6">
@@ -150,10 +157,10 @@ export default function SobrePage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/50 to-transparent lg:w-1/2" />
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* CTA Section */}
-          <div className="max-w-5xl mx-auto bg-emerald-600 rounded-3xl overflow-hidden shadow-2xl relative">
+          <FadeIn delay={0.2} className="max-w-5xl mx-auto bg-emerald-600 rounded-3xl overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 z-0 opacity-20">
               <Image 
                 src="/praia-dos-carneiros.jpg" 
@@ -175,7 +182,7 @@ export default function SobrePage() {
                 </Button>
               </a>
             </div>
-          </div>
+          </FadeIn>
 
         </div>
       </main>

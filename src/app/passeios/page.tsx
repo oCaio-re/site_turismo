@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Map, MapPin, Clock, Camera } from 'lucide-react';
 import Image from "next/image";
+import { FadeIn } from "@/components/animations/FadeIn";
 
 export default function PasseiosPage() {
   const passeios = [
@@ -65,22 +66,28 @@ export default function PasseiosPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 border border-white/30 text-xs font-bold tracking-[0.2em] text-white uppercase backdrop-blur-md mb-6">
-            Experiências Inesquecíveis
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-lg">
-            Descubra o <span className="text-emerald-400">Paraíso</span>
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-100 font-medium leading-relaxed drop-shadow-md">
-            Roteiros turísticos personalizados, praias paradisíacas e imersão cultural. Sua melhor viagem pelo Nordeste começa aqui.
-          </p>
+          <FadeIn direction="down" delay={0.2}>
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 border border-white/30 text-xs font-bold tracking-[0.2em] text-white uppercase backdrop-blur-md mb-6">
+              Experiências Inesquecíveis
+            </div>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.3}>
+            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-lg">
+              Descubra o <span className="text-emerald-400">Paraíso</span>
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.4}>
+            <p className="text-lg md:text-xl text-zinc-100 font-medium leading-relaxed drop-shadow-md">
+              Roteiros turísticos personalizados, praias paradisíacas e imersão cultural. Sua melhor viagem pelo Nordeste começa aqui.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
       <main className="flex-grow py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
           
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <FadeIn className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
               Nossos Roteiros Exclusivos
             </h2>
@@ -88,11 +95,11 @@ export default function PasseiosPage() {
             <p className="text-slate-600 text-lg mt-4">
               Passeios privativos com conforto, segurança e motoristas guias que conhecem os melhores segredos da região.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {passeios.map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all flex flex-col group">
+              <FadeIn key={i} delay={0.1 * i} className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all flex flex-col group">
                 
                 {/* Image Header */}
                 <div className="relative h-56 w-full overflow-hidden">
@@ -134,12 +141,12 @@ export default function PasseiosPage() {
                     </Button>
                   </a>
                 </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
 
           {/* CTA Section */}
-          <div className="mt-32 max-w-7xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative">
+          <FadeIn delay={0.2} className="mt-32 max-w-7xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 z-0 opacity-20">
                 <Image 
                   src="/praia-dos-carneiros.jpg" 
@@ -164,7 +171,7 @@ export default function PasseiosPage() {
                 </Button>
               </a>
             </div>
-          </div>
+          </FadeIn>
 
         </div>
       </main>
