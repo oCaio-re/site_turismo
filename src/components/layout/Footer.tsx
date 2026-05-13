@@ -28,8 +28,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/nerytour/" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 rounded-full border border-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all">
-                <Camera className="h-4 w-4" />
-              </a>
+                <Camera className="h-4 w-4" />              </a>
               <a href="https://wa.me/5581988763397?text=Olá, gostaria de saber mais sobre os serviços da Nery Tour." target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-900 rounded-full border border-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all">
                 <MessageCircle className="h-4 w-4" />
               </a>
@@ -96,8 +95,8 @@ export function Footer() {
             </p>
             <div className="pt-4">
               <div className="flex flex-col space-y-4">
-                <div className="flex items-center text-xs font-bold text-zinc-600 tracking-wider">
-                  CADASTUR: 12.345678.10.0001-2
+                <div className="flex items-center text-xs font-bold text-zinc-600 tracking-wider uppercase">
+                  CADASTUR: 22.109.459/0001-60
                 </div>
               </div>
             </div>
@@ -107,14 +106,14 @@ export function Footer() {
         <div className="mt-20 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500 font-light">
           <p>© 2026 Nery Tour. Todos os direitos reservados.</p>
           <div className="flex space-x-8 pb-4 md:pb-0">
-            <button 
-              onClick={() => setActiveModal('terms')} 
+            <button
+              onClick={() => setActiveModal('terms')}
               className="hover:text-primary transition-colors cursor-pointer"
             >
               Termos e Condições
             </button>
-            <button 
-              onClick={() => setActiveModal('privacy')} 
+            <button
+              onClick={() => setActiveModal('privacy')}
               className="hover:text-primary transition-colors cursor-pointer"
             >
               Política de Privacidade
@@ -124,48 +123,48 @@ export function Footer() {
       </div>
 
       {/* Terms and Conditions Modal */}
-      <LegalModal 
-        isOpen={activeModal === 'terms'} 
-        onClose={closeModal} 
+      <LegalModal
+        isOpen={activeModal === 'terms'}
+        onClose={closeModal}
         title="Termos e Condições"
       >
         <div className="space-y-4">
           <h4 className="text-white font-bold">1. Introdução</h4>
           <p>Ao utilizar os serviços da Nery Tour, você concorda com os termos aqui estabelecidos. Nossos serviços incluem transporte executivo, translados e roteiros turísticos.</p>
-          
+
           <h4 className="text-white font-bold">2. Reservas e Pagamentos</h4>
           <p>As reservas devem ser feitas com antecedência mínima de 24 horas. O pagamento pode ser realizado via PIX, cartão de crédito ou faturamento (exclusivo para empresas).</p>
-          
+
           <h4 className="text-white font-bold">3. Cancelamentos</h4>
           <p>Cancelamentos realizados com mais de 12 horas de antecedência não sofrerão taxas. Para cancelamentos com menos de 12 horas, poderá ser retida uma taxa de 30% do valor total.</p>
-          
+
           <h4 className="text-white font-bold">4. Responsabilidades</h4>
           <p>A Nery Tour compromete-se com a segurança e pontualidade, mas não se responsabiliza por atrasos causados por fatores externos imprevistos (trânsito excessivo, acidentes de terceiros ou condições climáticas extremas).</p>
-          
+
           <h4 className="text-white font-bold">5. Conduta do Passageiro</h4>
           <p>É obrigatório o uso de cinto de segurança. Não é permitido fumar ou consumir bebidas alcoólicas no interior dos veículos.</p>
         </div>
       </LegalModal>
 
       {/* Privacy Policy Modal */}
-      <LegalModal 
-        isOpen={activeModal === 'privacy'} 
-        onClose={closeModal} 
+      <LegalModal
+        isOpen={activeModal === 'privacy'}
+        onClose={closeModal}
         title="Política de Privacidade"
       >
         <div className="space-y-4">
           <h4 className="text-white font-bold">1. Coleta de Informações</h4>
           <p>Coletamos apenas os dados necessários para a prestação de nossos serviços, como nome, e-mail e telefone fornecidos via formulário de contato ou WhatsApp.</p>
-          
+
           <h4 className="text-white font-bold">2. Uso dos Dados</h4>
           <p>Seus dados são utilizados exclusivamente para processar suas reservas, responder a consultas e melhorar a sua experiência com a Nery Tour.</p>
-          
+
           <h4 className="text-white font-bold">3. Proteção e Segurança</h4>
           <p>Implementamos medidas de segurança para proteger suas informações contra acesso não autorizado ou uso indevido. Não compartilhamos seus dados com terceiros para fins publicitários.</p>
-          
+
           <h4 className="text-white font-bold">4. Cookies</h4>
           <p>Nosso site utiliza cookies básicos para melhorar a navegação e entender como os usuários interagem com nosso conteúdo.</p>
-          
+
           <h4 className="text-white font-bold">5. Seus Direitos</h4>
           <p>Você pode solicitar a qualquer momento a exclusão ou atualização de seus dados pessoais de nossa base de contatos.</p>
         </div>
