@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,7 +15,6 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -65,7 +63,6 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-<<<<<<< HEAD
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -76,26 +73,6 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-=======
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-semibold tracking-wide transition-all duration-300 hover:text-primary uppercase relative group/link ${isActive ? 'text-primary' : 'text-zinc-300'
-                    }`}
-                >
-                  {link.name}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 rounded-full ${isActive ? 'w-full' : 'w-0 group-hover/link:w-full'
-                      }`}
-                  />
-                </Link>
-              );
-            })}
->>>>>>> 1001d62 (made dynamic framer motion elements)
           </div>
 
           {/* Header Actions */}
@@ -125,22 +102,16 @@ export function Navbar() {
         {mobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl animate-in slide-in-from-top-4 fade-in duration-300">
             <div className="container mx-auto px-4 py-6 flex flex-col space-y-2">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`block text-lg font-semibold py-4 px-4 rounded-xl transition-all uppercase tracking-wide ${isActive
-                      ? 'text-primary bg-primary/10 border-l-4 border-primary'
-                      : 'text-zinc-300 hover:text-primary hover:bg-primary/5'
-                      }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="block text-lg font-semibold py-4 px-4 rounded-xl text-zinc-300 hover:text-primary hover:bg-primary/10 transition-all uppercase tracking-wide"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
               <div className="pt-6 pb-2 px-2">
                 <a href="https://wa.me/5581988763397?text=Olá, gostaria de fazer uma reserva." target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 text-lg font-bold uppercase tracking-widest rounded-xl shadow-lg shadow-primary/20 transition-all">
